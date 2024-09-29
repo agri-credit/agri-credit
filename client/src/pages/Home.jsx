@@ -7,7 +7,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Home = () => {
   // const featuresRef = useRef(null);
   const user = useSelector((state) => state.user.currentUser);
-  const [email, setEmail] = useState(user.email);
+  const [email, setEmail] = useState(user?.email);
   // const scrollToFeatures = () => {
   //   featuresRef.current?.scrollIntoView({ behavior: "smooth" });
   // };
