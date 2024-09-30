@@ -18,7 +18,8 @@ import CropList from "./components/CropList";
 import FertiList from "./components/FertiList";
 import Disease from "./components/DIseases";
 import Pesticides from "./components/Pesticides";
-
+import CropRecommender from "./pages/CropRecommender";
+import CropPrice from "./pages/CropPrice";
 export default function App() {
   const user = useSelector((state) => state.user.currentUser);
   //console.log(user)
@@ -47,7 +48,8 @@ export default function App() {
         <Route path="/fertilist" element={<FertiList />} />
         <Route path="/diseases" element={<Disease />} />
         <Route path="/pesticides" element={<Pesticides />} /> */}
-
+        <Route path="/croprecommender" element={<CropRecommender />} />
+        <Route path="/cropprice" element={<CropPrice/>}/>
         <Route path="/t&c" element={<TandC />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       </Routes>
