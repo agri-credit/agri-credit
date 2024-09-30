@@ -13,6 +13,11 @@ import { useSelector } from "react-redux";
 import ScrollToTop from "./components/ScrollToTop";
 import TandC from "./pages/TandC";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AgriHelp from "./pages/AgriHelp";
+import CropList from "./components/CropList";
+import FertiList from "./components/FertiList";
+import Disease from "./components/DIseases";
+import Pesticides from "./components/Pesticides";
 
 export default function App() {
   const user = useSelector((state) => state.user.currentUser);
@@ -35,6 +40,14 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path="/agrihelp" element={<AgriHelp />} />
+        </Route>
+        {/* <Route path="/croplist" element={<CropList />} />
+        <Route path="/fertilist" element={<FertiList />} />
+        <Route path="/diseases" element={<Disease />} />
+        <Route path="/pesticides" element={<Pesticides />} /> */}
+
         <Route path="/t&c" element={<TandC />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       </Routes>

@@ -1,31 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaMoon } from "react-icons/fa";
+import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
+import React from "react";
+import { GoPlus } from "react-icons/go";
 import { LuMoon, LuSun } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import { signoutSuccess } from "../redux/user/userSlice";
-import { GoPlus } from "react-icons/go";
-// import WbSunnyRoundedIcon from '@mui/icons-material'
+
 export default function Header() {
   const path = useLocation().pathname;
-  // const location = useLocation()
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const { theme } = useSelector((state) => state.theme);
-  // const [searchTerm, setSearchTerm] = useState('');
-
-  // useEffect(() => {
-  //     const urlParams = new URLSearchParams(location.search);
-  //     const searchTermFromUrl = urlParams.get('searchTerm');
-  //     if (searchTermFromUrl) {
-  //         setSearchTerm(searchTermFromUrl)
-  //     }
-
-  // }, [location.search])
 
   const handleSignout = async () => {
     try {
@@ -46,48 +33,43 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="sticky top-0 z-50 border-b-2 dark:border-gray-700">
+    <Navbar className="sticky top-0 z-50 border-b-2 dark:border-gray-700 bg-green-50 dark:bg-green-900 bg-opacity-70 backdrop-blur-md shadow-lg">
       <Link
         to="/"
-        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
+        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold text-green-800 dark:text-white"
       >
-        <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
+        <span className="px-2 py-1 bg-gradient-to-r from-green-500 via-green-600 to-green-700 rounded-lg text-white shadow-md">
           Agri
         </span>
         Credit
       </Link>
+
       <div className="flex gap-5 items-center md:order-3">
-        {/* Create post icon*/}
+        {/* Create post icon */}
         {currentUser?.isAdmin && (
-          <Link to={"/create-post"}>
-            <div
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 cursor-pointer transition-transform transform hover:scale-105 hover:bg-gray-50 dark:hover:bg-gray-600 shadow-sm hover:shadow-lg"
-              onClick={() => {
-                /* Handle the click action */
-              }}
-            >
+          <Link to="/create-post">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-700 cursor-pointer transition-transform transform hover:scale-105 hover:bg-green-100 dark:hover:bg-green-600 shadow-md">
               <GoPlus
-                style={{
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                }}
-                className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
+                style={{ fontSize: "2rem", fontWeight: "bold" }}
+                className="text-green-800 dark:text-gray-200"
               />
             </div>
           </Link>
         )}
-        {/* Theme:dark or light */}
+
+        {/* Theme: dark or light */}
         <div
-          className="w-10 h-10 flex items-center justify-center p-2 rounded-full bg-white dark:bg-gray-700 cursor-pointer transition-transform transform hover:scale-105 hover:bg-gray-50 dark:hover:bg-gray-600 shadow-sm hover:shadow-lg"
+          className="w-10 h-10 flex items-center justify-center p-2 rounded-full bg-green-100 dark:bg-green-700 cursor-pointer transition-transform transform hover:scale-105 hover:bg-green-100 dark:hover:bg-green-600 shadow-md"
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? (
-            <LuSun className="text-3xl text-gray-800 dark:text-yellow-400 transition-transform duration-300" />
+            <LuSun className="text-3xl text-gray-800 dark:text-yellow-400" />
           ) : (
-            <LuMoon className="text-3xl text-gray-800 dark:text-blue-400 transition-transform duration-300" />
+            <LuMoon className="text-3xl text-gray-800 dark:text-blue-400" />
           )}
         </div>
-        {/* DropDown Navbar */}
+
+        {/* Dropdown Navbar */}
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -102,22 +84,19 @@ export default function Header() {
                 {currentUser.email}
               </span>
             </Dropdown.Header>
-            <Link to={"/dashboard?tab=profile"}>
+
+            <Link to="/dashboard?tab=profile">
               <Dropdown.Item>Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
-            {/* <Dropdown.Header>
-                                <span className="block text-sm">@{currentUser.username}</span>
-                                <span className="block text-sm font-medium truncate">{currentUser.email}</span>
-                            </Dropdown.Header> */}
           </Dropdown>
         ) : (
           <Link to="/sign-in">
             <Button
-              gradientDuoTone="purpleToBlue"
+              gradientDuoTone="greenToBlue"
               outline
-              className="shadow-md hover:shadow-lg hover:bg-gradient-to-r from-purple-500 to-blue-500 hover:text-white transition-all duration-300 dark:border-gray-600 dark:text-white dark:hover:bg-gradient-to-r dark:hover:from-purple-700 dark:hover:to-blue-700"
+              className="shadow-md hover:shadow-lg hover:bg-gradient-to-r from-green-500 to-blue-500 hover:text-white transition-all duration-300 dark:border-gray-600 dark:text-white dark:hover:bg-gradient-to-r dark:hover:from-green-600 dark:hover:to-blue-600"
             >
               Sign In
             </Button>
@@ -125,6 +104,7 @@ export default function Header() {
         )}
         <Navbar.Toggle />
       </div>
+
       <Navbar.Collapse>
         <Navbar.Link
           as={Link}
@@ -149,6 +129,14 @@ export default function Header() {
           className="dark:text-white"
         >
           Dashboard
+        </Navbar.Link>
+        <Navbar.Link
+          as={Link}
+          to="/agrihelp"
+          active={path === "/agrihelp"}
+          className="dark:text-white"
+        >
+          AgriHelp
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

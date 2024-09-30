@@ -42,7 +42,7 @@ export default function SignUp() {
       <main className="flex-grow flex items-center justify-center p-3">
         <div className="max-w-4xl w-full flex flex-col  mb-20 md:flex-row gap-5">
           {/* Left */}
-          <div className="flex-1 shadow-lg rounded-xl p-5 bg-white dark:bg-gray-800 flex flex-col items-center justify-center">
+          <div className="flex-1 shadow-lg rounded-xl p-5 bg-green-100 dark:bg-green-800 flex flex-col items-center justify-center">
             <Link
               to="/"
               className="font-bold dark:text-white text-4xl text-center"
@@ -58,7 +58,7 @@ export default function SignUp() {
             </p>
           </div>
           {/* Right */}
-          <div className="flex-1 shadow-lg rounded-xl p-5 bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 duration-700">
+          <div className="flex-1 shadow-lg rounded-xl p-5 bg-green-100 dark:bg-green-800 transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-green-50 dark:hover:bg-green-700 duration-700">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div>
                 <Label htmlFor="username" value="Your username" />

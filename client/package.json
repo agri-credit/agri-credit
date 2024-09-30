@@ -12,7 +12,6 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.7",
     "@reduxjs/toolkit": "^2.2.7",
     "firebase": "^10.13.0",
     "flowbite-react": "^0.10.1",
