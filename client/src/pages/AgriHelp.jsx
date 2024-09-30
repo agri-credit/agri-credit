@@ -77,6 +77,31 @@ const AgriHelp = () => {
                 </div>
               </Link>
             </div>
+
+            <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+              <Link to="/croprecommender" className="flex flex-col items-center">
+                <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
+                <div className="container4 text-[#007bff] text-xl font-bold">
+                  Crop recommend
+                </div>
+                <div className="disc text-green-700 mt-2 text-center">
+                  Select the crop name and the disease name and get the suitable
+                  pesticide to be applied to control the disease.
+                </div>
+              </Link>
+            </div>
+            <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+              <Link to="/cropprice" className="flex flex-col items-center">
+                <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
+                <div className="container4 text-[#007bff] text-xl font-bold">
+                  Crop price
+                </div>
+                <div className="disc text-green-700 mt-2 text-center">
+                  Select the crop name and the disease name and get the suitable
+                  pesticide to be applied to control the disease.
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       )}
