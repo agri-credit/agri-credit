@@ -20,6 +20,11 @@ import Disease from "./components/DIseases";
 import Pesticides from "./components/Pesticides";
 import CropRecommender from "./pages/CropRecommender";
 import CropPrice from "./pages/CropPrice";
+import FertilizerRecommend from "./pages/FertilizerRecommend";
+import YieldPrediction from "./pages/YieldPrediction";
+import RainPrediction from "./pages/RainPrediction";
+import CropPrediction from "./pages/CropPrediction";
+
 export default function App() {
   const user = useSelector((state) => state.user.currentUser);
   //console.log(user)
@@ -45,11 +50,15 @@ export default function App() {
           <Route path="/agrihelp" element={<AgriHelp />} />
         </Route>
         {/* <Route path="/croplist" element={<CropList />} />
-        <Route path="/fertilist" element={<FertiList />} />
         <Route path="/diseases" element={<Disease />} />
         <Route path="/pesticides" element={<Pesticides />} /> */}
         <Route path="/croprecommender" element={<CropRecommender />} />
         <Route path="/cropprice" element={<CropPrice/>}/>
+        <Route path="/predict_fertilizer" element={<FertilizerRecommend />} />
+        <Route path="/yieldprediction" element={<YieldPrediction />} />
+        <Route path="/rainprediction" element={<RainPrediction />} />
+        <Route path="/croppredict" element={<CropPrediction />} />
+
         <Route path="/t&c" element={<TandC />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       </Routes>

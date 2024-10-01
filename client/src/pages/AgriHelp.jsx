@@ -20,7 +20,7 @@ const AgriHelp = () => {
           <h1 className="text-4xl font-bold mb-8">Agricultural Assistance</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {/* Crop List Card */}
-            <div className="cont1 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+            {/* <div className="cont1 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
               <Link
                 to="/agrihelp?tab=croplist"
                 className="flex flex-col items-center"
@@ -34,11 +34,11 @@ const AgriHelp = () => {
                   grown in that selected soil.
                 </div>
               </Link>
-            </div>
+            </div> */}
 
             {/* Fertilizers Card */}
             <div className="cont2 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-              <Link to="/fertilist" className="flex flex-col items-center">
+              <Link to="/predict_fertilizer" className="flex flex-col items-center">
                 <GiSprout className="h-10 w-10 text-[#4c8f2e] mb-3" />
                 <div className="container2 text-[#4c8f2e] text-xl font-bold">
                   Fertilizers
@@ -50,7 +50,7 @@ const AgriHelp = () => {
               </Link>
             </div>
 
-            {/* Diseases Card */}
+            {/* Diseases Card
             <div className="cont3 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
               <Link to="/diseases" className="flex flex-col items-center">
                 <FaHeartbeat className="h-10 w-10 text-[#d9534f] mb-3" />
@@ -62,10 +62,10 @@ const AgriHelp = () => {
                   that selected crop.
                 </div>
               </Link>
-            </div>
+            </div> */}
 
             {/* Pesticides Card */}
-            <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+            {/* <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
               <Link to="/pesticides" className="flex flex-col items-center">
                 <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
                 <div className="container4 text-[#007bff] text-xl font-bold">
@@ -76,7 +76,30 @@ const AgriHelp = () => {
                   pesticide to be applied to control the disease.
                 </div>
               </Link>
+            </div> */}
+            <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+              <Link to="/yieldprediction" className="flex flex-col items-center">
+                <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
+                <div className="container4 text-[#007bff] text-xl font-bold">
+                  yield
+                </div>
+                <div className="disc text-green-700 mt-2 text-center">
+                  yields
+                </div>
+              </Link>
             </div>
+              <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+              <Link to="/rainprediction" className="flex flex-col items-center">
+                <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
+                <div className="container4 text-[#007bff] text-xl font-bold">
+                  rain
+                </div>
+                <div className="disc text-green-700 mt-2 text-center">
+                  rain
+                </div>
+              </Link>
+            </div>
+
 
             <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
               <Link to="/croprecommender" className="flex flex-col items-center">
@@ -102,6 +125,18 @@ const AgriHelp = () => {
                 </div>
               </Link>
             </div>
+            {/* <div className="cont4 bg-green-100 bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+              <Link to="/croppredict" className="flex flex-col items-center">
+                <FaSyringe className="h-10 w-10 text-[#007bff] mb-3" />
+                <div className="container4 text-[#007bff] text-xl font-bold">
+                  Crop predict
+                </div>
+                <div className="disc text-green-700 mt-2 text-center">
+                  Select the crop name and the disease name and get the suitable
+                  pesticide to be applied to control the disease.
+                </div>
+              </Link>
+            </div> */}
           </div>
         </div>
       )}
