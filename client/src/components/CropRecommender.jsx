@@ -1,3 +1,4 @@
+import { CloudCog } from "lucide-react";
 import React, { useState } from "react";
 
 export default function CropRecommender() {
@@ -21,6 +22,7 @@ export default function CropRecommender() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("sentttt")
     const response = await fetch(
       "http://127.0.0.1:5000/predict_crop_recommend",
       {
@@ -32,6 +34,7 @@ export default function CropRecommender() {
       }
     );
     const result = await response.json();
+    console.log(result)
     setPrediction(result.prediction);
   };
 
@@ -44,7 +47,7 @@ export default function CropRecommender() {
         onSubmit={handleSubmit}
         className="flex flex-col w-80 border border-green-400 rounded-lg p-6 bg-green-100 bg-opacity-60 backdrop-blur-md shadow-xl transition-all duration-300 hover:bg-opacity-70"
       >
-        <label className="mb-4 text-green-800 dark:text-green-300 font-medium">
+        <label className="mb-4 text-green-800 dark:text-green-300 font-medium dark:text-green-900">
           Enter the following details:
         </label>
 
@@ -55,7 +58,7 @@ export default function CropRecommender() {
           value={formData.n}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -64,7 +67,7 @@ export default function CropRecommender() {
           value={formData.p}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -73,7 +76,7 @@ export default function CropRecommender() {
           value={formData.k}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -82,7 +85,7 @@ export default function CropRecommender() {
           value={formData.t}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -91,7 +94,7 @@ export default function CropRecommender() {
           value={formData.h}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -101,7 +104,7 @@ export default function CropRecommender() {
           value={formData.ph}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <input
           type="number"
@@ -110,7 +113,7 @@ export default function CropRecommender() {
           value={formData.r}
           onChange={handleChange}
           required
-          className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+          className="mb-3 text-green-900 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
         />
         <button
           type="submit"
@@ -121,7 +124,7 @@ export default function CropRecommender() {
       </form>
 
       {prediction && (
-        <h2 className="mt-6 text-2xl text-green-800 dark:text-green-200 opacity-0 animate-fadeIn">{`Predicted Crop: ${prediction}`}</h2>
+        <h2 className="mt-6 text-2xl text-green-800 dark:text-green-200 animate-fadeIn">{`Predicted Crop: ${prediction}`}</h2>
       )}
     </div>
   );

@@ -43,7 +43,7 @@ const About = () => {
 
         {/* Button Animation */}
         <motion.a
-          href="mailto:rohith018.r@gmail.com"
+          href="mailto:agricredit4tvs@gmail.com"
           className="inline-block px-6 py-3 bg-[#4caf50] text-white rounded-full shadow-lg hover:bg-[#8bc34a] transition duration-300 transform hover:scale-110"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}

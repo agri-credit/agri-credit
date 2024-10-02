@@ -62,7 +62,7 @@ export default function FertilizerRecommend() {
         </label>
 
         <input
-          type="text"
+          type="number"
           name="N"
           placeholder="Nitrogen (N)"
           value={formData.N}
@@ -71,7 +71,7 @@ export default function FertilizerRecommend() {
           className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 text-green-900 focus:ring-green-500 transition-all"
         />
         <input
-          type="text"
+          type="number"
           name="P"
           placeholder="Phosphorus (P)"
           value={formData.P}
@@ -80,7 +80,7 @@ export default function FertilizerRecommend() {
           className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 text-green-900 focus:ring-green-500 transition-all"
         />
         <input
-          type="text"
+          type="number"
           name="K"
           placeholder="Potassium (K)"
           value={formData.K}
@@ -89,7 +89,7 @@ export default function FertilizerRecommend() {
           className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 text-green-900 focus:ring-green-500 transition-all"
         />
         <input
-          type="text"
+          type="number"
           name="Temperature"
           placeholder="Temperature"
           value={formData.Temperature}
@@ -98,7 +98,7 @@ export default function FertilizerRecommend() {
           className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 text-green-900 focus:ring-green-500 transition-all"
         />
         <input
-          type="text"
+          type="number"
           name="Humidity"
           placeholder="Humidity"
           value={formData.Humidity}
@@ -107,7 +107,7 @@ export default function FertilizerRecommend() {
           className="mb-3 p-2 border border-green-400 rounded focus:outline-none focus:ring-2 text-green-900 focus:ring-green-500 transition-all"
         />
         <input
-          type="text"
+          type="number"
           name="SoilMoisture"
           placeholder="Soil Moisture"
           value={formData.SoilMoisture}
@@ -142,7 +142,7 @@ export default function FertilizerRecommend() {
       </form>
 
       {prediction && (
-        <h2 className="mt-6 text-2xl text-green-800 dark:text-green-200 opacity-0 animate-fadeIn">
+        <h2 className="mt-6 text-2xl text-green-800 dark:text-green-200 animate-fadeIn">
           {`Predicted Fertilizer: ${prediction}`}
         </h2>
       )}

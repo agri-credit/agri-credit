@@ -143,7 +143,8 @@ export default function CropPrediction() {
             Predictions:
           </h2>
           <pre className="text-green-900 dark:text-green-200">
-            {JSON.stringify(prediction, null, 2)}
+            {/* {JSON.stringify(prediction, null, 2)} */}
+            {Object.keys(prediction).map((p)=><div className="flex"><p>{p}</p> : {prediction[p]}</div>)}
           </pre>
         </div>
       )}

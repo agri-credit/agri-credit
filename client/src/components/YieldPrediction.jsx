@@ -1,3 +1,4 @@
+import { CloudCog, Loader2 } from "lucide-react";
 import React, { useState, useEffect } from "react";
 
 export default function YieldPrediction() {
@@ -11,7 +12,8 @@ export default function YieldPrediction() {
   const [uniqueDistricts, setUniqueDistricts] = useState([]);
   const [uniqueSeasons, setUniqueSeasons] = useState([]);
   const [uniqueCrops, setUniqueCrops] = useState([]);
-
+  const [loading, setLoading]= useState(false)
+console.log(loading)
   useEffect(() => {
     const fetchUniqueValues = async () => {
       try {
@@ -35,7 +37,7 @@ export default function YieldPrediction() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true)
     const inputData = {
       state: state,
       district: district,
@@ -63,6 +65,8 @@ export default function YieldPrediction() {
       }
     } catch (err) {
       setError("Something went wrong!");
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -161,9 +165,10 @@ export default function YieldPrediction() {
         </div>
         <button
           type="submit"
-          className="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-all"
+          disabled={loading}
+          className="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-all flex"
         >
-          Predict Yield
+          {loading && <Loader2 className="animate-spin text-center"/> }Predict Yield
         </button>
       </form>
 

@@ -26,11 +26,11 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route
           path="/sign-in"
-          element={user ? <Navigate to="/dashboard" /> : <SignIn />}
+          element={user ? <Navigate to="/agrihelp" /> : <SignIn />}
         />
         <Route
           path="/sign-up"
-          element={user ? <Navigate to="/dashboard" /> : <SignUp />}
+          element={user ? <Navigate to="/agrihelp" /> : <SignUp />}
         />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
