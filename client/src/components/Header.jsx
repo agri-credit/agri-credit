@@ -122,14 +122,14 @@ export default function Header() {
         >
           About
         </Navbar.Link>
-        <Navbar.Link
+        {/* <Navbar.Link
           as={Link}
           to="/dashboard"
           active={path === "/dashboard"}
           className="dark:text-white"
         >
           Dashboard
-        </Navbar.Link>
+        </Navbar.Link> */}
         <Navbar.Link
           as={Link}
           to="/agrihelp"
