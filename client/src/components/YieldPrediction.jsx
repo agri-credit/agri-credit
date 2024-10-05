@@ -166,9 +166,9 @@ console.log(loading)
         <button
           type="submit"
           disabled={loading}
-          className="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-all flex"
+          className="bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-all flex justify-center items-center"
         >
-          {loading && <Loader2 className="animate-spin text-center"/> }Predict Yield
+          {loading? <Loader2 className="animate-spin text-center"/> :"Predict Yield"}
         </button>
       </form>
 

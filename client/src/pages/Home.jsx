@@ -77,7 +77,7 @@ const Home = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
           >
             AgriCredit: Empowering farmers with accessible, intelligent
-            financial solutions.
+            Agricultural solutions.
           </motion.p>
 
           {/* Button Animation */}
