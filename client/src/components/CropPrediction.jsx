@@ -13,7 +13,7 @@ export default function CropPrediction() {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/options");
+        const response = await fetch(import.meta.env.VITE_FLASK_URL/+"options");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -33,7 +33,7 @@ export default function CropPrediction() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:5000/predictcrop", {
+      const response = await fetch(import.meta.env.VITE_FLASK_URL/+"predictcrop", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

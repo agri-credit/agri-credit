@@ -9,7 +9,7 @@ function CropPrice() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict_crop_price", {
+      const response = await fetch(import.meta.env.VITE_FLASK_URL/+"predict_crop_price", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

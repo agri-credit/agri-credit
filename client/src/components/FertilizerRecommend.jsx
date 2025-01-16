@@ -29,7 +29,7 @@ export default function FertilizerRecommend() {
     setPrediction("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict_fertilizer", {
+      const response = await fetch(import.meta.env.VITE_FLASK_URL/+"predict_fertilizer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

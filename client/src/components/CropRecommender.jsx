@@ -24,7 +24,7 @@ export default function CropRecommender() {
     e.preventDefault();
     console.log("sentttt")
     const response = await fetch(
-      "http://127.0.0.1:5000/predict_crop_recommend",
+      import.meta.env.VITE_FLASK_URL/+"predict_crop_recommend",
       {
         method: "POST",
         headers: {

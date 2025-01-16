@@ -17,7 +17,7 @@ console.log(loading)
   useEffect(() => {
     const fetchUniqueValues = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/uniquevalues");
+        const response = await fetch(import.meta.env.VITE_FLASK_URL/+"uniquevalues");
         const data = await response.json();
 
         if (response.ok) {
@@ -47,7 +47,7 @@ console.log(loading)
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/yieldpredict", {
+      const response = await fetch(import.meta.env.VITE_FLASK_URL/+"yieldpredict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

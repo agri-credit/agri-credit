@@ -24,7 +24,7 @@ export default function RainPrediction() {
   useEffect(() => {
     const fetchStates = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/api/states");
+        const response = await fetch(import.meta.env.VITE_FLASK_URL/+"api/states");
         const data = await response.json();
         setStates(data);
         setSelectedState(data[0]); // Set default state
@@ -40,7 +40,7 @@ export default function RainPrediction() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:5000/predictrainfall", {
+      const response = await fetch(import.meta.env.VITE_FLASK_URL/+"predictrainfall", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
