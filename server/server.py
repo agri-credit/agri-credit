@@ -6,34 +6,15 @@ from sklearn.ensemble import RandomForestClassifier
 from flask_cors import CORS
 from sklearn.linear_model import LinearRegression
 from datetime import datetime, timedelta
-from flask import Flask, request, jsonify
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import LabelEncoder
-from sklearn.tree import DecisionTreeClassifier
-from flask import Flask, request, jsonify
-import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 import joblib
 
 
 # Load the dataset
-
-
-
-# Create the Flask app
-
-# Load the dataset
-from flask import Flask, request, jsonify
-import pandas as pd
-import numpy as np
-from flask_cors import CORS
-
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173"])  # Assuming your frontend runs on this port
 class Decision_Node:
