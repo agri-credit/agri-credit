@@ -51,10 +51,10 @@ class Leaf:
 def predictcrop():
     print("predictcrop   hi")
     print("predictcrop      im  inn ")
-    dt_model_final = joblib.load('../ML/crop_prediction/filetest2.pkl')
+    dt_model_final = joblib.load('./ML/crop_prediction/filetest2.pkl')
 
 # Load your data into a DataFrame
-    data = pd.read_csv('../ML/crop_prediction/preprocessed2.csv') 
+    data = pd.read_csv('./ML/crop_prediction/preprocessed2.csv') 
     # Get input data from the request
     data = request.json
     state = data['state']
@@ -89,7 +89,7 @@ def print_leaf(counts):
 def get_options():
     print("options   hi")
     print("options      im  inn ")
-    data = pd.read_csv('../ML/crop_prediction/preprocessed2.csv') 
+    data = pd.read_csv('./ML/crop_prediction/preprocessed2.csv') 
 
     states = data['State_Name'].unique().tolist()
     districts = data['District_Name'].unique().tolist()
@@ -121,7 +121,7 @@ def get_states():
     print("api   hi")
     print("api      im  inn ")
     # Load the CSV file
-    df = pd.read_csv('../ML/rainfall_prediction/rainfall_in_india_1901-2015.csv')
+    df = pd.read_csv('./ML/rainfall_prediction/rainfall_in_india_1901-2015.csv')
     
     # Extract unique states
     unique_states = df['SUBDIVISION'].unique().tolist()
@@ -129,7 +129,7 @@ def get_states():
     return jsonify(unique_states)
 # Define a function to predict rainfall for a given state and month
 def predict_rainfall(state, month):
-    df = pd.read_csv('../ML/rainfall_prediction/rainfall_in_india_1901-2015.csv')
+    df = pd.read_csv('./ML/rainfall_prediction/rainfall_in_india_1901-2015.csv')
 
     # Filter the dataframe to only include rows with the given state
     state_data = df[df['SUBDIVISION'] == state]
@@ -160,7 +160,7 @@ def uniquevalues():
     print("uniquevalues      im  inn ")
     try:
         # Extract unique values from the DataFrame
-        df = pd.read_csv('../ML/yield_prediction/crop_production_karnataka.csv')
+        df = pd.read_csv('./ML/yield_prediction/crop_production_karnataka.csv')
         
         # Check if required columns exist
         if 'District_Name' not in df.columns or 'Season' not in df.columns or 'Crop' not in df.columns:
@@ -183,7 +183,7 @@ def uniquevalues():
         return jsonify({'error': str(e)}), 500
 
 # Load the dataset once at startup
-df = pd.read_csv("../ML/Akhil Price Prediction Model/Price_Agriculture_commodities_Week.csv")
+df = pd.read_csv("./ML/Akhil Price Prediction Model/Price_Agriculture_commodities_Week.csv")
 
 def calculate_crop_price(crop_name, prediction_date_str):
     """
@@ -232,7 +232,7 @@ def calculate_crop_price(crop_name, prediction_date_str):
 def predict_crop_recommend():
     print("predict_crop_recommend   hi")
     print("predict_crop_recommend      im  inn ")
-    dataset_crop_recommend = pd.read_csv('../ML/crop_recommendation/Crop_recommendation.csv')
+    dataset_crop_recommend = pd.read_csv('./ML/crop_recommendation/Crop_recommendation.csv')
 
     X = dataset_crop_recommend.iloc[:, :-1].values
     y = dataset_crop_recommend.iloc[:, -1].values
@@ -277,7 +277,7 @@ def predict_fertilizer():
     print("predict_fertilizer   hi")
     print("predict_fertilizer      im  inn ")
     try:
-        data = pd.read_csv("../ML/fertilizer_recommendation/fertilizer_recommendation.csv")
+        data = pd.read_csv("./ML/fertilizer_recommendation/fertilizer_recommendation.csv")
 
         # Label encoding for categorical features
         le_soil = LabelEncoder()
@@ -342,7 +342,7 @@ def yieldpredict():
     print("yieldpredict   hi")
     print("yieldpredict      im  inn ")
     try:
-        df = pd.read_csv("../ML/yield_prediction/crop_production_karnataka.csv")
+        df = pd.read_csv("./ML/yield_prediction/crop_production_karnataka.csv")
 
 # Drop the Crop_Year column
         df = df.drop(['Crop_Year'], axis=1)
